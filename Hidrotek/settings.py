@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7u#(bc#un0fsn*84hins-o9=x-*2c+75!4$j*ldwawa-=+wwfp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['hidrotekrender.onrender.com']
 
 
 # Application definition
