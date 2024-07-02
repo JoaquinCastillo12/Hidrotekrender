@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+
+    <section class="container mx-auto my-10 px-4">
+        <p class="text-gray-700 text-center mb-10"><strong><i>"En Hidrotek, contamos con años de experiencia y tecnología de vanguardia, ofrecemos soluciones hídricas integrales. <br>Desde la perforación de pozos hasta la instalación de sistemas de filtración, nuestros servicios están diseñados <br>para garantizar la máxima eficiencia y calidad del agua en cada proyecto."</strong></i></p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+            <!-- Sistema Hidroneumáticos -->
+            <div class="bg-white rounded-lg shadow-lg p-6" style="background-color: #dbffcc;">
+                <img src="{% static 'images/hidroneumatic.jpg' %}" alt="Sistema Hidroneumáticos" class="h-48 w-full object-cover mb-4">
+                <h3 class="text-xl font-semibold mb-2">Sistemas hidroneumáticos</h3>
+                <p style="text-align: justify;" class="text-gray-700">Instalamos sistemas hidroneumáticos eficientes, asegurando una distribución óptima del agua en tus instalaciones residenciales, comerciales e industriales.</p>
+            </div>
+
+            <!-- Aguas Residuales -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <img src="{% static 'images/manteni.jpg' %}" alt="Aguas Residuales" class="h-48 w-full object-cover mb-4">
+                <h3 class="text-xl font-semibold mb-2">Mantenimiento</h3>
+                <p style="text-align: justify;" class="text-gray-700">El correcto control y evacuación de las aguas residuales ya no será un problema, con nuestra amplia gama de bombas organizaremos el cuadro de forma segura estas aguas residuales.</p>
+            </div>
+
+            <!-- Sistemas de Riego -->
+            <div class="bg-white rounded-lg shadow-lg p-6" style="background-color: #dbffcc;">
+                <img src="{% static 'images/SIF.jpg' %}" alt="Sistemas de Riego" class="h-48 w-full object-cover mb-4">
+                <h3 class="text-xl font-semibold mb-2">Sistemas de filtración</h3>
+                <p style="text-align: justify;" class="text-gray-700">Tenemos una amplia cartera de productos entre ellos: motobombas, válvulas, y mucho más, para brindar el acompañamiento adecuado en los sistemas de riego.</p>
+            </div>
+
+            <!-- Piscinas -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <img src="{% static 'images/Piscina.jpg' %}" alt="Piscinas" class="h-48 w-full object-cover mb-4">
+                <h3 class="text-xl font-semibold mb-2">Piscinas</h3>
+                <p style="text-align: justify;" class="text-gray-700">La bomba es la parte principal de una piscina, debido a su capacidad de recirculación que permite la filtración y calentamiento. Tenemos bombas de piscina y accesorios para todo tipo de aplicaciones, desde piscinas residenciales hasta piscinas de uso público.</p>
+            </div>
+
+            <!-- Pozos -->
+            <div class="bg-white rounded-lg shadow-lg p-6" style="background-color: #dbffcc;">
+                <img src="{% static 'images/pozo2.jpg' %}" alt="Pozos" class="h-48 w-full object-cover mb-4">
+                <h3 class="text-xl font-semibold mb-2">Pozos</h3>
+                <p style="text-align: justify;" class="text-gray-700">Agua potable en cualquier punto del país, nuestras bombas de pozo ofrecen calidad y seguridad para la correcta extracción de este vital líquido.</p>
+            </div>
+
+        </div>
+    </section>
+    {% endblock%}

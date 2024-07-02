@@ -1,0 +1,64 @@
+{% load static %}
+<nav class="shadow-lg bg-white pl-20 pt-4 pb-4 pr-20">
+    <div class="container mx-auto flex justify-between items-center px-4">
+        <div class="flex items-center">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/Logo1.jpg' %}" alt="Logo de la empresa" class="h-20 w-auto mr-2">
+            </a>
+        </div>
+        <div class="hidden lg:flex items-center space-x-4">
+            <a href="{% url 'home' %}" class="text-gray-700 hover:text-blue-600 transition duration-300">Inicio</a>
+            <a href="{% url 'products' %}" class="text-gray-700 hover:text-blue-600 transition duration-300">Productos</a>
+            <a href="{% url 'services' %}" class="text-gray-700 hover:text-blue-600 transition duration-300">Servicios</a>
+            <a href="{% url 'contact' %}" class="text-gray-700 hover:text-blue-600 transition duration-300">Contacto</a>
+            
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out">Login</a>
+                <a href="{% url 'register' %}" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-300 ease-in-out">Register</a>
+            {% endif %}
+            
+            <a href="{% url 'view_cart' %}" class="relative group hover:text-blue-600">
+                <i class="fas fa-shopping-cart fa-2x"></i>
+                {% if cart_item_count > 0 %}
+                <span id="cart-count" class="bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center absolute -top-1 -right-1 text-xs font-bold">
+                    {{ cart_item_count }}
+                </span>
+                {% endif %}
+            </a>
+        </div>
+        <div class="lg:hidden flex items-center space-x-4">
+            <button id="menu-button" class="focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <a href="{% url 'view_cart' %}" class="relative group hover:text-blue-600">
+                <i class="fas fa-shopping-cart fa-2x"></i>
+                {% if cart_item_count > 0 %}
+                <span id="cart-count" class="bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center absolute -top-1 -right-1 text-xs font-bold">
+                    {{ cart_item_count }}
+                </span>
+                {% endif %}
+            </a>
+        </div>
+        
+    </div>
+    <div id="menu" class="hidden lg:hidden px-4">
+        <a href="{% url 'home' %}" class="block px-4 py-2 hover:bg-gray-200">Inicio</a>
+        <a href="{% url 'products' %}" class="block px-4 py-2 hover:bg-gray-200">Productos</a>
+        <a href="{% url 'services' %}" class="block px-4 py-2 hover:bg-gray-200">Servicios</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-200">Cotizaciones</a>
+        <a href="{% url 'contact' %}" class="block px-4 py-2 hover:bg-gray-200">Contacto</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="block px-4 py-2 bg-blue-600 text-white rounded my-2 mx-4">Logout</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="block px-4 py-2 bg-blue-600 text-white rounded my-2 mx-4">Login</a>
+        <a href="{% url 'register' %}" class="block px-4 py-2 bg-blue-600 text-white rounded my-2 mx-4">Register</a>
+        {% endif %}
+    </div>
+</nav>
+
+
+

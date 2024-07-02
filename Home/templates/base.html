@@ -1,0 +1,92 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIDROTEK</title> 
+    <link rel="icon" href="icono/logoEMP.ico">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-white-100">
+
+    {% include 'nav-bar.html' %}
+    {% if messages %}
+        <div class="container mx-auto px-4">
+            {% for message in messages %}
+            <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative mb-4 shadow-md" role="alert">
+                <strong class="font-bold">Info:</strong>
+                <span class="block sm:inline">{{ message }}</span>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="this.parentNode.remove()">
+                    <svg class="fill-current h-6 w-6 text-blue-700" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1 1 0 0 1-1.414 0L10 11.414l-2.936 2.935a1 1 0 1 1-1.414-1.414l2.936-2.935-2.936-2.936a1 1 0 1 1 1.414-1.414L10 8.586l2.936-2.935a1 1 0 1 1 1.414 1.414L11.414 10l2.936 2.936a1 1 0 0 1 0 1.414z"/></svg>
+                </span>
+            </div>
+            
+                
+            </div>          
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+   
+    <footer class="bg-blue-600 text-white py-10 mt-20">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
+            <!-- Logo de la empresa con enlace al inicio -->
+            <div class="text-center md:text-left">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/Logo2.png' %}" alt="Logo de la empresa" class="h-20 w-auto mx-auto md:mx-0">
+                </a>
+            </div>
+            
+            <!-- Enlaces -->
+            <div class="text-center md:text-left">
+                <h3 class="text-lg font-bold mb-4">Enlaces</h3>
+                <ul>
+                    <li><a href="{% url 'home' %}" class="hover:text-gray-300">Inicio</a></li>
+                    <li><a href="{% url 'products' %}" class="hover:text-gray-300">Productos</a></li>
+                    <li><a href="{% url 'services' %}" class="hover:text-gray-300">Servicios</a></li>
+                    <li><a href="{% url 'contact' %}" class="hover:text-gray-300">Contacto</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Cotizaciones</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contacto -->
+            <div class="text-center md:text-left">
+                <h3 class="text-lg font-bold mb-4">Contacto</h3>
+                <ul>
+                    <li><a href="tel:+50765258464" class="hover:text-gray-300">Tel: +507 6525-8464</a></li>
+                    <li><a href="mailto:ventashidrotek@gmail.com" class="hover:text-gray-300">Email: ventashidrotek@gmail.com</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Ubicación: La Concepción, Provincia de Chiriquí</a></li>
+                </ul>
+            </div>
+            
+            <!-- Síguenos -->
+            <div class="text-center md:text-left">
+                <h3 class="text-lg font-bold mb-4">Síguenos</h3>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-instagram fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-6 text-center">
+            <p>&copy; 2024 HIDROTEK Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    
+
+<script>
+    const menuButton = document.getElementById('menu-button');
+    const menu = document.getElementById('menu');
+    menuButton.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>
